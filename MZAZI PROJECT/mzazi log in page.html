@@ -123,7 +123,7 @@
 }
 
 #menuItems li {
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #menuItems a {
@@ -153,6 +153,12 @@
 <!-- Button to open the modal -->
 <button onclick="document.getElementById('id01').style.display='block'">Already part of the Mzazi family? Click to log in!</button>
 
+<!--redirect to sign up if user is new-->
+<ul id="menuItems">
+  <li><a href="mzazi sign up page.html" class="button">New to M-ZAZI? Click to Sign up!</a></li>
+  </ul>
+
+
 <!-- The Modal (contains the log in form) -->
 <div id="id01" class="modal">
   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -179,11 +185,6 @@
   </form>
 </div>
 
-
-<!--redirect to sign up if user is new-->
-  <ul id="menuItems">
-  <li><a href="mzazi sign up page.html" class="button">New to M-ZAZI? Click to Sign up!</a></li>
-  </ul>
 
   <script>
 // Close the modal when clicking outside of it
