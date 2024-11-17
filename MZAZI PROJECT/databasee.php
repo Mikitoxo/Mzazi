@@ -15,7 +15,7 @@
     //To hide ugly error message from users
     
     if ($conn) {
-        echo"💚";
+        echo"💖";
     }
     else {
         echo "not connected";

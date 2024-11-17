@@ -46,7 +46,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Task Manager</title>
+    <title>Login - MZAZI</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -87,7 +87,7 @@
         }
 
         .form-input[type="submit"] {
-            background-color: #28a745;
+            background-color: lightcoral;
             color: white;
             font-weight: bold;
             cursor: pointer;
@@ -96,7 +96,7 @@
         }
 
         .form-input[type="submit"]:hover {
-            background-color: #218838;
+            background-color: red;
         }
 
         .error {
@@ -113,7 +113,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Login to Task Manager</h2>
+        <h2>Login to </h2>M-ZAZI
 
         <!-- Login Form -->
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">

@@ -47,7 +47,7 @@
         }
 
         input[type="submit"] {
-            background-color: #28a745;
+            background-color: lightcoral;
             color: white;
             font-weight: bold;
             cursor: pointer;
@@ -56,12 +56,12 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #218838;
+            background-color: red;
         }
 
         /* Error message*/
         .error {
-            color: darkolivegreen;
+            color: darkred;
             text-align: center;
         }
         
