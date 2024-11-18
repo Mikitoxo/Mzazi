@@ -101,8 +101,8 @@
        if(mysqli_query($conn, $sql)){
         echo"<div class='welcome'>Welcome to the family!". "</div>";
 
-        //redirect to tasks page
-        header("Location: tasks.php");
+        //redirect to front page
+        header("Location: mzazi about page.html");
         exit;
        }
        else{

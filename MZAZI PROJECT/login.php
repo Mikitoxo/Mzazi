@@ -26,9 +26,10 @@
                 if (password_verify($password, $user['password'])) {
                     // Password correct, start session
                     $_SESSION['username'] = $username;
-                    header("Location: tasks.php");
+                    header("Location: Mzazi about page.html");
                     exit;
-                } else {
+                }
+                 else {
                     $error = "Incorrect password.";
                 }
             } else {
@@ -36,6 +37,7 @@
             }
         }
     }
+
 
     // Close the database connection
     mysqli_close($conn);
