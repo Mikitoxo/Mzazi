@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>M-ZAZI</title>
-    <link rel="stylesheet" href="mzazi about page.css">
+    <link rel="stylesheet" href="./css/about.css">
     <script src="mzazi.js" defer></script>
 </head>
+
 <body>
     <nav>
         <div class="logoHolder">
             <a href="index.html" id="logo">M-ZAZI</a>
         </div>
         <ul id="menuItems">
-            <li><a href="mzazi services and orders.html" id="ordersBtn">Order</a></li>
-            <li><a href="mzazicontacts.html" id="contactsBtn">Contact</a></li>
-            <li><a href="mzazi services and orders.html" class="button">Basket <span id="basketCount">(3)</span></a></li>
+            <li><a href="services.php" id="ordersBtn">Order</a></li>
+            <li><a href="contacts.php" id="contactsBtn">Contact</a></li>
+            <li><a href="services.php" class="button">Basket <span id="basketCount">(3)</span></a></li>
         </ul>
     </nav>
 
@@ -24,15 +26,15 @@
         <section class="hero">
             <h1>About</h1>
             <div class="image-grid">
-                <img src="mzazi pet sitting.jpeg" alt="Pet Sitting" class="hero-image">
-                <img src="mzazi baby sitting.jpeg" alt="Baby Sitting" class="hero-image">
-                <img src="mzazi errands.jpeg" alt="Errand running" class="hero-image">
+                <img src="./assets/imgs/pet_sitting.jpeg" alt="Pet Sitting" class="hero-image">
+                <img src="./assets/imgs/baby_sitting.jpeg" alt="Baby Sitting" class="hero-image">
+                <img src="./assets/imgs/errands.jpeg" alt="Errand running" class="hero-image">
             </div>
 
             <div class="hero-content">
                 <h2>About M-ZAZI</h2>
                 <p>M-ZAZI is your go-to platform for simplifying family life! We connect busy parents with trusted caregivers for babysitting, pet sitting, and errand-running services. Our mission is to provide peace of mind and flexibility with reliable, quality care—all in a safe, supportive environment.</p>
-                <a href="mzazi services and orders.html" class="button order-now">Order Now</a>
+                <a href="services.php" class="button order-now">Order Now</a>
             </div>
         </section>
 
@@ -66,13 +68,13 @@
             </div>
             <div>
                 <h3>Quick Links</h3>
-                <p><a href="mzaziorders.html">Order Now</a></p>
-                <p><a href="mzaziinfo.html">About Us</a></p>
-                <p><a href="mzazicontacts.html">Contact</a></p>
+                <p><a href="order.php">Order Now</a></p>
+                <p><a href="about.php">About Us</a></p>
+                <p><a href=contacts.php">Contact</a></p>
             </div>
         </div>
         <p>&copy; 2024 M-ZAZI. All rights reserved.</p>
     </footer>
 </body>
-</html>
 
+</html>

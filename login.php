@@ -1,50 +1,50 @@
-<?php 
-    include("databasee.php");
-    session_start();
+<?php
+include(__DIR__ . "/config/database.php");
+session_start();
 
-    // Check if user is already logged in, redirect to tasks page
-    if (isset($_SESSION['username'])) {
-        header("Location: MZAZI FRONT PAGE.html ");
-        exit;
-    }
+// Check if user is already logged in, redirect to tasks page
+if (isset($_SESSION['username'])) {
+    header("Location: index.php ");
+    exit;
+}
 
-    // Handle login form submission
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username'], $_POST['password'])) {
-        $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
-        $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
+// Handle login form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username'], $_POST['password'])) {
+    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
 
-        if (empty($username) || empty($password)) {
-            $error = "Please enter both username and password.";
-        } else {
-            // Check if username exists in the database
-            $sql = "SELECT * FROM users WHERE username = '$username'";
-            $result = mysqli_query($conn, $sql);
+    if (empty($username) || empty($password)) {
+        $error = "Please enter both username and password.";
+    } else {
+        // Check if username exists in the database
+        $sql = "SELECT * FROM users WHERE username = '$username'";
+        $result = mysqli_query($conn, $sql);
 
-            if (mysqli_num_rows($result) > 0) {
-                $user = mysqli_fetch_assoc($result);
-                // Verify password
-                if (password_verify($password, $user['password'])) {
-                    // Password correct, start session
-                    $_SESSION['username'] = $username;
-                    header("Location: Mzazi about page.html");
-                    exit;
-                }
-                 else {
-                    $error = "Incorrect password.";
-                }
+        if (mysqli_num_rows($result) > 0) {
+            $user = mysqli_fetch_assoc($result);
+            // Verify password
+            if (password_verify($password, $user['password'])) {
+                // Password correct, start session
+                $_SESSION['username'] = $username;
+                header("Location: about.php");
+                exit;
             } else {
-                $error = "Username does not exist.";
+                $error = "Incorrect password.";
             }
+        } else {
+            $error = "Username does not exist.";
         }
     }
+}
 
 
-    // Close the database connection
-    mysqli_close($conn);
+// Close the database connection
+mysqli_close($conn);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +84,8 @@
             box-sizing: border-box;
         }
 
-        .form-input[type="text"], .form-input[type="password"] {
+        .form-input[type="text"],
+        .form-input[type="password"] {
             font-size: 16px;
         }
 
@@ -113,9 +114,15 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h2>Login to </h2>M-ZAZI
+        <div>
+            <h2>Login to </h2>
+            <div class="logoHolder">
+                <a href="index.php" id="logo">M-ZAZI</a>
+            </div>
+        </div>
 
         <!-- Login Form -->
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -125,10 +132,10 @@
         </form>
 
         <!-- Error message -->
-        <?php 
-            if (isset($error)) {
-                echo "<div class='error'>$error</div>";
-            }
+        <?php
+        if (isset($error)) {
+            echo "<div class='error'>$error</div>";
+        }
         ?>
 
         <!-- Link to Registration page -->
@@ -137,4 +144,5 @@
         </div>
     </div>
 </body>
+
 </html>
