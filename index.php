@@ -54,9 +54,9 @@
             </div>
             <div>
                 <h3>Quick Links</h3>
-                <p><a href="mzaziorders.html">Order Now</a></p>
-                <p><a href="mzaziinfo.html">About Us</a></p>
-                <p><a href="mzazicontacts.html">Contact</a></p>
+                <p><a href="order.php">Order Now</a></p>
+                <p><a href="about.php">About Us</a></p>
+                <p><a href=contacts.php">Contact</a></p>
             </div>
         </div>
         <p>&copy; 2024 M-ZAZI. All rights reserved.</p>
