@@ -1,49 +1,16 @@
-<?php
-include(__DIR__ . "/config/database.php");
-
-if (isset($_SESSION['username'])) {
-    header("Location: index.php ");
-    exit;
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
-    $email = filter_input(INPUT_POST, "email", FILTER_SANITIZE_SPECIAL_CHARS);
-    $password = filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS);
-
-
-
-    if (empty($username) || empty($password) || empty($email)) {
-        echo "Please enter valid email, username or password";
-    } else {
-        $hash = password_hash($password, PASSWORD_DEFAULT); //hashing hides the passwords, only user knows them
-        $sql = "INSERT INTO users(username, email, password)
-VALUES ('$username', '$email','$hash')";
-
-        if (mysqli_query($conn, $sql)) {
-            echo "<div class='welcome'>Welcome to the family!" . "</div>";
-
-            //redirect to front page
-            header("Location: about.php");
-            exit;
-        } else {
-            echo "<div class='error'> Error:" . mysqli_error($conn) . "</div>";
-        }
-    }
-}
-//close the database connection
-mysqli_close($conn);
+<?php 
+    include("databasee.php");
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Mzazi</title>
+    <title>task manager</title>
     <style>
-        body {
+         
+         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
@@ -70,10 +37,7 @@ mysqli_close($conn);
         }
 
         /* Form fields  */
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        input[type="submit"] {
+        input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -100,22 +64,55 @@ mysqli_close($conn);
             color: darkred;
             text-align: center;
         }
+        
+        
     </style>
 </head>
-
 <body>
     <div>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST"><!--post is more secure than get-->
-            <h2>Welcome to M-ZAZI!</h2>
-            username:<br>
-            <input type="text" name="username"><br>
-            email:<br>
-            <input type="email" name="email"><br>
-            password:<br>
-            <input type="password" name="password"><br>
-            <input type="submit" name="submit" value="register">
-        </form>
-    </div>
-</body>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"])?>"method="POST"><!--post is more secure than get-->
+        <h2>Welcome to M-ZAZI!</h2>
+        username:<br>
+        <input type="text" name="username"><br>
+        email:<br>
+        <input type="email" name="email"><br>
+        password:<br>
+        <input type="password" name="password"><br>
+        <input type="submit" name="submit" value="register">
+    </form>
+    
 
+<?php 
+  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
+    $email = filter_input(INPUT_POST,"email", FILTER_SANITIZE_SPECIAL_CHARS);
+    $password = filter_input(INPUT_POST,"password", FILTER_SANITIZE_SPECIAL_CHARS);
+    
+  
+
+    if(empty($username) || empty($password) || empty($email)){
+        echo "Please enter valid email, username or password"; 
+    }
+    else{
+        $hash = password_hash($password, PASSWORD_DEFAULT);//hashing hides the passwords, only user knows them
+        $sql = "INSERT INTO users(username, email, password)
+        VALUES ('$username', '$email','$hash')";
+
+       if(mysqli_query($conn, $sql)){
+        echo"<div class='welcome'>Welcome to the family!". "</div>";
+
+        //redirect to front page
+        header("Location: mzazi about page.html");
+        exit;
+       }
+       else{
+        echo"<div class='error'> Error:". mysqli_error($conn)."</div>";
+    }
+  }
+  }
+  //close the database connection
+ mysqli_close($conn);
+?>
+</div>
+</body>
 </html>
