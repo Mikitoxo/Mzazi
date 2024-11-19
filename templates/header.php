@@ -21,9 +21,12 @@ if (!isset($_SESSION['username'])) {
             <a href="index.php" id="logo">M-ZAZI</a>
         </div>
         <ul id="menuItems">
-            <li><a href="services.php" id="ordersBtn">Order</a></li>
-            <li><a href="contacts.php" id="contactsBtn">Contact</a></li>
-            <li><a href="services.php" class="button">Basket <span id="basketCount">(3)</span></a></li>
+        <div>
+                <li><a href="mzazi services and orders.html" id="ordersBtn">Order</a></li>
+                <li><a href="mzazicontacts.html" id="contactsBtn">Contact</a></li>
+                <li><a href="mzazi services and orders.html" class="button">Basket <span id="basketCount">(3)</span></a></li>
+            </div>
+            <li><a href="dashboard.html" class="button">Dashboard</a></li>
         </ul>
     </nav>
 <?php
