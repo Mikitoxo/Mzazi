@@ -10,16 +10,9 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logoHolder">
-            <a href="index.html" id="logo">M-ZAZI</a>
-        </div>
-        <ul id="menuItems">
-            <li><a href="services.php" id="ordersBtn">Order</a></li>
-            <li><a href="contacts.php" id="contactsBtn">Contact</a></li>
-            <li><a href="services.php" class="button">Basket <span id="basketCount">(3)</span></a></li>
-        </ul>
-    </nav>
+    <?php
+    include(__DIR__ . "/templates/header.php")
+    ?>
 
     <main>
         <!-- Hero Section -->

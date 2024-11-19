@@ -13,22 +13,15 @@
 <body>
 
     <!-- Navigation Section -->
-    <nav>
-        <div class="logoHolder">
-            <a href="index.php" id="logo">M-ZAZI</a>
-        </div>
-        <ul id="menuItems">
-            <li><a href="contacts.php" id="contactsBtn">Contact us</a></li>
-            <li><a href="register.php" class="button">Sign up</a></li>
-            <li><a href="login.php" class="button">log in</a></li>
-        </ul>
-    </nav>
+    <?php
+    include(__DIR__ . "/templates/header.php")
+    ?>
 
     <!-- Hero Section -->
     <section class="hero">
         <h1>Your trusted assistant for baby-sitting,pet-sitting, and errand running services.</h1>
-        <h1>M-ZAZI serves as an indispensable companion for families managing both professional and personal obligations.</h1>
-        <a href="login.php" class="button">Browse our page</a>
+        <p>M-ZAZI serves as an indispensable companion for families managing both professional and personal obligations.</p>
+        <a href="about.php" class="button">Browse our page</a>
 
         <!-- Testimonials/reviews -->
         <section class="testimonials">
@@ -42,32 +35,32 @@
                 <span>- David O.</span>
             </div>
         </section>
-        </main>
+    </section>
 
 
-        <!-- Footer Section -->
-        <footer>
-            <div class="footer-content">
-                <div>
-                    <h3>Contact Us</h3>
-                    <p><a href="mailto:mzaziteam@gmail.com">📧 Email</a></p>
-                    <p><a href="tel:+25412346">📞 Call</a></p>
-                </div>
-                <div>
-                    <h3>Follow Us</h3>
-                    <p><a href="#">📘 Facebook</a></p>
-                    <p><a href="#">📸 Instagram</a></p>
-                    <p><a href="#">✖ X</a></p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <p><a href="mzaziorders.html">Order Now</a></p>
-                    <p><a href="mzaziinfo.html">About Us</a></p>
-                    <p><a href="mzazicontacts.html">Contact</a></p>
-                </div>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Contact Us</h3>
+                <p><a href="mailto:mzaziteam@gmail.com">📧 Email</a></p>
+                <p><a href="tel:+25412346">📞 Call</a></p>
             </div>
-            <p>&copy; 2024 M-ZAZI. All rights reserved.</p>
-        </footer>
+            <div>
+                <h3>Follow Us</h3>
+                <p><a href="#">📘 Facebook</a></p>
+                <p><a href="#">📸 Instagram</a></p>
+                <p><a href="#">✖ X</a></p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p><a href="mzaziorders.html">Order Now</a></p>
+                <p><a href="mzaziinfo.html">About Us</a></p>
+                <p><a href="mzazicontacts.html">Contact</a></p>
+            </div>
+        </div>
+        <p>&copy; 2024 M-ZAZI. All rights reserved.</p>
+    </footer>
 
 
 </body>

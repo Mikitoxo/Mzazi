@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <?php
+    include(__DIR__ . "/templates/header.php")
+    ?>
     <div class="container">
         <h1>Services / Orders</h1>
         <div class="services-list">
